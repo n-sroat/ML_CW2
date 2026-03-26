@@ -1,6 +1,6 @@
 # TypiClust & Active Learning Pipeline
 
-This repository contains a complete pipeline for cold-start active learning. It Implement TypiClust from the paper and also implements a modification to the original algorithm.
+This repository contains a complete pipeline for cold-start active learning. It Implements TypiClust from the paper and also implements a modification to the original algorithm.
 
 ---
 
