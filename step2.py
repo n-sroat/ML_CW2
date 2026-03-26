@@ -11,19 +11,16 @@ def generate_cluster_labels(
     batch_size: int = 1024,
     verbose: bool = True
 ):
-    # Load embeddings
     embeddings = embeddings_base
 
     if verbose:
         print("Loaded embeddings:", embeddings.shape)
 
-    # Determine K
     K = min(labeled_points + budget, max_clusters)
 
     if verbose:
         print(f"Using K = {K} clusters")
 
-    # Choose clustering method
     if K <= 50:
         if verbose:
             print("Using KMeans")
@@ -40,7 +37,6 @@ def generate_cluster_labels(
             random_state=random_state
         )
 
-    # Fit clustering
     cluster_labels = cluster_model.fit_predict(embeddings)
 
     if verbose:
