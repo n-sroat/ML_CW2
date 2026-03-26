@@ -55,7 +55,7 @@ python simclr.py --config_env configs/env.yml --config_exp configs/pretext/simcl
 ```bash
 cd .\TorchSSL\
 python flexmatch.py --c config/flexmatch/flexmatch_cifar10_10_0.yaml
-`
+```
 #Troubleshooting & Notes
 Paths: Ensure you are in the correct subdirectories (.\Unsupervised_Classification\ or .\TorchSSL\) before running their respective scripts, as they rely on local config paths.
 
