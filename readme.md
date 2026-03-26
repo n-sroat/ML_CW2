@@ -14,11 +14,11 @@ Install the GPU-enabled version of PyTorch first:
 python -m pip install --upgrade pip setuptools
 pip install typing-extensions==4.15.0
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-
+```
 ### 2. Install Main Dependencies
-
+```bash
 pip install -r requirements.txt
-
+```
 ### File explanations
 
 Embeddings.py: Recomputes embeddings based on the saved SimCLR model and saves them as .npy files.
@@ -43,15 +43,19 @@ Linear Evaluation: linear_eval.py and linear_comparison.py
 Fully Supervised Evaluation: fully_supervised_eval.py and FS_comparison.py (includes comparisons for the modified algorithm).
 
 ####for things unrelated to main implentation do
+```bash
 pip install -r requirements.txt
+```
 ### to recompute embeddings 
+```bash
 cd .\Unsupervised_Classification\
 python simclr.py --config_env configs/env.yml --config_exp configs/pretext/simclr_cifar10.yml
-
+```
 ###to train flexmatch Manually edit flexmatch.py to set your chosen indices.
+```bash
 cd .\TorchSSL\
 python flexmatch.py --c config/flexmatch/flexmatch_cifar10_10_0.yaml
-
+`
 #Troubleshooting & Notes
 Paths: Ensure you are in the correct subdirectories (.\Unsupervised_Classification\ or .\TorchSSL\) before running their respective scripts, as they rely on local config paths.
 
