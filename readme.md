@@ -42,16 +42,16 @@ Linear Evaluation: linear_eval.py and linear_comparison.py
 
 Fully Supervised Evaluation: fully_supervised_eval.py and FS_comparison.py (includes comparisons for the modified algorithm).
 
-####for things unrelated to main implentation do
+#### For things unrelated to main implentation do
 ```bash
 pip install -r requirements.txt
 ```
-### to recompute embeddings 
+### To recompute embeddings 
 ```bash
 cd .\Unsupervised_Classification\
 python simclr.py --config_env configs/env.yml --config_exp configs/pretext/simclr_cifar10.yml
 ```
-###to train flexmatch Manually edit flexmatch.py to set your chosen indices.
+### To train flexmatch Manually edit flexmatch.py to set your chosen indices.
 ```bash
 cd .\TorchSSL\
 python flexmatch.py --c config/flexmatch/flexmatch_cifar10_10_0.yaml
