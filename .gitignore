@@ -1,0 +1,4 @@
+*.tar
+*.pth
+data/*.tar.gz
+*.tar.gz
