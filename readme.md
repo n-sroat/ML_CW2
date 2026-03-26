@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ### File explanations
 
 Embeddings.py: Recomputes embeddings based on the saved SimCLR model and saves them as .npy files.
-this file can be found in the Unsupervised_Classification directory
+This file can be found in the Unsupervised_Classification directory and must be run from there, it required the simclr model which must be trained for it to run.
 
 step2.py: Performs K-Means clustering on the saved embeddings and outputs cluster labels as .npy files.
 

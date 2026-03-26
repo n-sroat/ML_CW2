@@ -68,8 +68,8 @@ embeddings = np.concatenate(embeddings, axis=0)
 labels = np.concatenate(labels, axis=0)
 
 suffix = "train" if train_split else "test"
-np.save(f'cifar10_embeddings_testing{suffix}.npy', embeddings)
-np.save(f'cifar10_labels_testing{suffix}.npy', labels)
+np.save(f'cifar10_embeddings{suffix}.npy', embeddings)
+np.save(f'cifar10_labels{suffix}.npy', labels)
 
 print(f"Saved embeddings ({suffix}):", embeddings.shape)
 print(f"Saved labels ({suffix}):", labels.shape)
