@@ -2,16 +2,16 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
-from Unsupervised_Classification.data.cifar import CIFAR10
+from data.cifar import CIFAR10
 import numpy as np
-from Unsupervised_Classification.models.resnet_cifar import resnet18
+from models.resnet_cifar import resnet18
 import os
 from pathlib import Path
 
 batch_size = 512
 num_workers = 0
 
-model_path = Path('./Unsupervised_Classification/results/cifar-10/pretext/model.pth.tar')
+model_path = Path('./results/cifar-10/pretext/model.pth.tar')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Dataset and DataLoader
@@ -23,7 +23,7 @@ transform = transforms.Compose([
 
 train_split = False  # Set True for train embeddings, False for test embeddings
 dataset = CIFAR10(
-    root=Path('./Unsupervised_Classification/dataset'),
+    root=Path('./dataset'),
     train=train_split,
     transform=transform,
     download=True
@@ -68,8 +68,8 @@ embeddings = np.concatenate(embeddings, axis=0)
 labels = np.concatenate(labels, axis=0)
 
 suffix = "train" if train_split else "test"
-np.save(f'cifar10_embeddings_{suffix}.npy', embeddings)
-np.save(f'cifar10_labels_{suffix}.npy', labels)
+np.save(f'cifar10_embeddings_testing{suffix}.npy', embeddings)
+np.save(f'cifar10_labels_testing{suffix}.npy', labels)
 
 print(f"Saved embeddings ({suffix}):", embeddings.shape)
 print(f"Saved labels ({suffix}):", labels.shape)
